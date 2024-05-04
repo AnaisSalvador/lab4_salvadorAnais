@@ -18,13 +18,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.inicio), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -32,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if (tengoInternet()) {
-            showToastWithDelay("Conexión a Internet disponible", 3000);
+            showToastWithDelay("Sí hay conexion", 3000);
         } else {
             ConfirmacionPopup();
         }
 
-        ConstraintLayout ingresarBoton = findViewById(R.id.iniciointernet);
+        Button ingresarBoton = findViewById(R.id.iniciointernet);
         ingresarBoton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,11 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
-
-    // Verificamos la conexión a Internet
     private boolean tengoInternet() {
         ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if (manager != null) {
@@ -70,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void ConfirmacionPopup() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("No hay conexion a Internet");
-        builder.setPositiveButton("Configuración", new DialogInterface.OnClickListener() {
+        builder.setTitle("No hay conexion");
+        builder.setPositiveButton("Conf", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(Settings.ACTION_SETTINGS);
@@ -79,15 +73,14 @@ public class MainActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-
-        builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Sí", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
             }
         });
-
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
 }

@@ -32,7 +32,7 @@
                 app:layout_constraintVertical_bias="0.047" />
 
             <EditText
-                android:id="@+id/editTextText2"
+                android:id="@+id/Lugarcito"
                 android:layout_width="233dp"
                 android:layout_height="51dp"
                 android:background="#FDFDFD"
@@ -111,7 +111,7 @@
                         app:layout_constraintVertical_bias="0.49" />
 
                     <Button
-                        android:id="@+id/clima"
+                        android:id="@+id/climabutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="#27A2B8"
