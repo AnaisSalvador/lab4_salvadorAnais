@@ -10,8 +10,8 @@
 
     <FrameLayout
         android:id="@+id/fragment_admin"
-        android:layout_width="407dp"
-        android:layout_height="855dp"
+        android:layout_width="412dp"
+        android:layout_height="861dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="410dp"
-        android:layout_height="55dp"
+        android:layout_height="47dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
