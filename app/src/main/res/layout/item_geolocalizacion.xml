@@ -44,7 +44,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/latitud1"
+            android:id="@+id/latitud2"
             android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -70,7 +70,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/longitud1"
+            android:id="@+id/longitud2"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_alignParentStart="true"
